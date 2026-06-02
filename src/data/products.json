@@ -5,7 +5,7 @@
     "category": "Electronics",
     "price": 999.99,
     "description": "High-performance laptop with 16GB RAM and 512GB SSD",
-    "image": "https://via.placeholder.com/300x300?text=Laptop+Pro"
+    "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&h=500&fit=crop"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "category": "Electronics",
     "price": 199.99,
     "description": "Noise-cancelling wireless headphones with 30h battery",
-    "image": "https://via.placeholder.com/300x300?text=Headphones"
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "category": "Electronics",
     "price": 299.99,
     "description": "Fitness tracker with heart rate monitor and GPS",
-    "image": "https://via.placeholder.com/300x300?text=Smart+Watch"
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&h=500&fit=crop"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "category": "Clothing",
     "price": 29.99,
     "description": "100% cotton comfortable t-shirt, available in multiple colors",
-    "image": "https://via.placeholder.com/300x300?text=T-Shirt"
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=500&fit=crop"
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "category": "Clothing",
     "price": 79.99,
     "description": "Classic fit denim jeans with stretch comfort",
-    "image": "https://via.placeholder.com/300x300?text=Jeans"
+    "image": "https://images.unsplash.com/photo-1542272617-08f08330c5cd?w=500&h=500&fit=crop"
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "category": "Accessories",
     "price": 49.99,
     "description": "Genuine leather wallet with RFID protection",
-    "image": "https://via.placeholder.com/300x300?text=Wallet"
+    "image": "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500&h=500&fit=crop"
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "category": "Accessories",
     "price": 89.99,
     "description": "Polarized UV protection sunglasses",
-    "image": "https://via.placeholder.com/300x300?text=Sunglasses"
+    "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&h=500&fit=crop"
   },
   {
     "id": 8,
@@ -61,7 +61,7 @@
     "category": "Home",
     "price": 149.99,
     "description": "Programmable coffee maker with thermal carafe",
-    "image": "https://via.placeholder.com/300x300?text=Coffee+Maker"
+    "image": "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=500&h=500&fit=crop"
   },
   {
     "id": 9,
@@ -69,7 +69,7 @@
     "category": "Home",
     "price": 39.99,
     "description": "LED desk lamp with adjustable brightness",
-    "image": "https://via.placeholder.com/300x300?text=Desk+Lamp"
+    "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500&h=500&fit=crop"
   },
   {
     "id": 10,
@@ -77,6 +77,86 @@
     "category": "Electronics",
     "price": 79.99,
     "description": "Portable waterproof speaker with 12h battery",
-    "image": "https://via.placeholder.com/300x300?text=Speaker"
+    "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500&h=500&fit=crop"
+  },
+  {
+    "id": 11,
+    "name": "Gaming Mouse",
+    "category": "Electronics",
+    "price": 59.99,
+    "description": "RGB gaming mouse with programmable buttons",
+    "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500&h=500&fit=crop"
+  },
+  {
+    "id": 12,
+    "name": "Mechanical Keyboard",
+    "category": "Electronics",
+    "price": 149.99,
+    "description": "RGB mechanical keyboard with blue switches",
+    "image": "https://images.unsplash.com/photo-1587829741301-dc798b91add1?w=500&h=500&fit=crop"
+  },
+  {
+    "id": 13,
+    "name": "Hoodie",
+    "category": "Clothing",
+    "price": 49.99,
+    "description": "Comfortable cotton blend hoodie with kangaroo pocket",
+    "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&h=500&fit=crop"
+  },
+  {
+    "id": 14,
+    "name": "Sneakers",
+    "category": "Clothing",
+    "price": 89.99,
+    "description": "Comfortable running shoes with breathable mesh",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&h=500&fit=crop"
+  },
+  {
+    "id": 15,
+    "name": "Backpack",
+    "category": "Accessories",
+    "price": 69.99,
+    "description": "Water-resistant backpack with laptop compartment",
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop"
+  },
+  {
+    "id": 16,
+    "name": "Watch",
+    "category": "Accessories",
+    "price": 129.99,
+    "description": "Classic analog watch with leather strap",
+    "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=500&fit=crop"
+  },
+  {
+    "id": 17,
+    "name": "Blender",
+    "category": "Home",
+    "price": 89.99,
+    "description": "High-speed blender for smoothies and soups",
+    "image": "https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=500&h=500&fit=crop"
+  },
+  {
+    "id": 18,
+    "name": "Plant Pot",
+    "category": "Home",
+    "price": 24.99,
+    "description": "Ceramic plant pot with drainage hole",
+    "image": "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=500&h=500&fit=crop"
+  },
+  {
+    "id": 19,
+    "name": "Tablet",
+    "category": "Electronics",
+    "price": 449.99,
+    "description": "10-inch tablet with stylus support",
+    "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500&h=500&fit=crop"
+  },
+  {
+    "id": 20,
+    "name": "Socks Set",
+    "category": "Clothing",
+    "price": 19.99,
+    "description": "Set of 5 comfortable cotton socks",
+    "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500&h=500&fit=crop"
   }
 ]
