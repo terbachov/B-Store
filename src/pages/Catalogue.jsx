@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 import products from '../data/products.json'
 
 export default function Catalogue() {
-  const [selectedCategory, setSelectedCategory] = useState('All')
+  const [selectedCategory, setSelectedCategory] = useState('Tous')
   
-  const categories = ['All', ...new Set(products.map(p => p.category))]
+  const categories = ['Tous', ...new Set(products.map(p => p.category))]
   
-  const filteredProducts = selectedCategory === 'All' 
+  const filteredProducts = selectedCategory === 'Tous' 
     ? products 
     : products.filter(p => p.category === selectedCategory)
 

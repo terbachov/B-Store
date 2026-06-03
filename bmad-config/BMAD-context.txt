@@ -1,0 +1,114 @@
+# B-Store BMAD Configuration
+
+> BMAD Method configuration for B-Store e-commerce project
+> Project: B-Store - React E-commerce Demo
+> Jira Project: PRAQ (alithya.atlassian.net)
+> GitHub: https://github.com/terbachov/B-Store
+> Created: 2026-06-02
+
+## Project Overview
+
+**B-Store** is a React-based e-commerce demonstration application built with modern web technologies. The project aims to showcase best practices in React development, state management, and UI design.
+
+### Tech Stack
+- **Frontend Framework**: React 18 with createRoot and StrictMode
+- **Build Tool**: Vite v5.4.21
+- **Routing**: React Router DOM
+- **Styling**: TailwindCSS v3
+- **Package Manager**: npm
+- **Version Control**: Git (GitHub: https://github.com/terbachov/B-Store)
+- **Project Management**: Jira (PRAQ project on alithya.atlassian.net)
+
+### Project Structure
+```
+B-Store/
+├── src/
+│   ├── components/      # Reusable React components
+│   │   └── Layout.jsx  # Navigation layout component
+│   ├── pages/          # Page components
+│   │   ├── Home.jsx
+│   │   ├── Catalogue.jsx
+│   │   ├── ProductDetail.jsx
+│   │   ├── Cart.jsx
+│   │   ├── Checkout.jsx
+│   │   └── Login.jsx
+│   ├── data/           # Hardcoded JSON data
+│   │   ├── products.json    # 20 products
+│   │   ├── categories.json  # 4 categories
+│   │   └── users.json       # 2 test users
+│   ├── App.jsx         # Main app with React Router
+│   ├── main.jsx        # React entry point
+│   └── index.css       # TailwindCSS directives
+├── bmad-config/        # BMAD configuration
+│   ├── agents/         # Agent configurations
+│   ├── workflows/      # Custom workflows
+│   ├── docs/           # Documentation
+│   └── context/        # Project context files
+├── public/
+├── index.html
+├── package.json
+├── vite.config.js
+├── tailwind.config.js
+├── postcss.config.js
+├── README.md
+└── .cursorrules       # AI development rules
+```
+
+### Current Features
+- **Catalogue Page**: Product listing with category filtering (Electronics, Clothing, Accessories, Home)
+- **Responsive Design**: Mobile-first approach with TailwindCSS
+- **Product Images**: High-quality Unsplash images for 20 products
+- **Navigation**: Clean navigation with Layout component
+
+### Planned Features (Jira Stories)
+- **PRAQ-108**: State Management with Context API for cart (high priority)
+- **PRAQ-106**: Product Detail page
+- **PRAQ-107**: Shopping Cart page
+- Checkout page
+- Login page
+
+### Jira Integration
+- **Project**: PRAQ
+- **Workspace**: alithya.atlassian.net
+- **Cloud ID**: 20f2f2ad-8e18-4ec5-ac50-3e9f3e618b25
+- **MCP Integration**: Configured and working
+
+### Code Conventions
+- Use functional components with hooks (no class components)
+- Component names in PascalCase (e.g., `ProductCard`, `Layout`)
+- File names in PascalCase matching component name
+- Use TailwindCSS utility classes for all styling
+- Use React Router DOM for navigation
+- Import JSON data from `src/data/`
+- Reference Jira tickets in commits: `PRAQ-XXX: description`
+
+### Development Workflow
+1. Pick a Jira story from PRAQ project
+2. Create feature branch: `git checkout -b feature/PRAQ-XXX-description`
+3. Implement following acceptance criteria
+4. Test locally: `npm run dev`
+5. Commit with Jira reference: `git commit -m "PRAQ-XXX: description"`
+6. Push to GitHub
+7. Create Pull Request
+8. Merge after review
+
+### BMAD Agents
+This project uses 3 specialized AI agents:
+- **B-Store-PO**: Product Owner - Creates Jira stories, defines acceptance criteria
+- **B-Store-Dev-TechLead**: Developer + Technical Lead - Implements code, does technical review
+- **B-Store-QA**: QA Engineer - Generates tests, validates quality
+
+### BMAD Workflows
+Custom workflows for common tasks:
+- `/create-story` - Create a Jira story
+- `/implement-story` - Implement a Jira story
+- `/code-review` - Code review
+- `/add-product` - Add a product to catalogue
+- `/create-component` - Create a React component
+
+### Key Files for AI Context
+- `README.md` - Project documentation
+- `.cursorrules` - AI development rules and patterns
+- `BMAD-context.txt` - This file (complete project context)
+- `src/data/products.json` - Product data structure
+- `src/data/categories.json` - Category data structure

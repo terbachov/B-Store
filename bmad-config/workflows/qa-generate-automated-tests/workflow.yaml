@@ -1,0 +1,57 @@
+name: qa-generate-automated-tests
+description: 'Generate automated test case documentation for Playwright/Vitest. Use when the user says "TCA" or "generate automated tests"'
+
+# Critical variables
+project_root: "{project-root}"
+communication_language: "fr"
+date: system-generated
+
+# Workflow components
+installed_path: "{project-root}/bmad-config/workflows/qa-generate-automated-tests"
+instructions: "{installed_path}/qa-generate-automated-tests.md"
+validation: false
+template: false
+
+# Variables and inputs
+jira_key: ""  # User provides Jira story key (e.g., PRAQ-106)
+
+# Output configuration
+# Chat: Display test cases as Markdown tables (primary output)
+# Files: Generate test files for Playwright/Vitest
+chat_output: "markdown"
+file_output: "test_files"
+
+# Required tools
+required_tools:
+  - mcp0_getJiraIssue       # Fetch Jira story details
+  - write_to_file           # Create test files
+
+# Analysis sources (in order of priority)
+analysis_sources:
+  - jira_story              # Main story (AC, description, QA notes, Dev notes)
+  - parent_epic             # Parent epic context
+  - linked_issues           # Related/blocking stories
+
+# Test categories to generate
+test_categories:
+  - unit                    # Component unit tests
+  - integration             # Component integration tests
+  - e2e                     # End-to-end tests
+
+# Coverage requirements
+coverage_target: 95
+mandatory_checks:
+  - all_ac_covered          # Every AC has at least 1 test
+  - qa_notes_covered        # All QA notes from story tested
+
+tags:
+  - qa
+  - automated-tests
+  - playwright
+  - vitest
+  - test-cases
+
+execution_hints:
+  interactive: true
+  autonomous: false
+  iterative: true

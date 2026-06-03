@@ -1,0 +1,58 @@
+name: qa-generate-manual-tests
+description: 'Generate manual test cases from Jira Story with chat-friendly table format for review before Jira push. Use when the user says "TCM" or "generate manual tests" or "create test cases"'
+
+# Critical variables
+project_root: "{project-root}"
+communication_language: "fr"
+date: system-generated
+
+# Workflow components
+installed_path: "{project-root}/bmad-config/workflows/qa-generate-manual-tests"
+instructions: "{installed_path}/qa-generate-manual-tests.md"
+validation: false
+template: false
+
+# Variables and inputs
+jira_key: ""  # User provides Jira story key (e.g., PRAQ-106)
+
+# Output configuration
+# Chat: Display test cases as Markdown tables (primary output)
+# Jira: Push test cases to JIRA after user approval
+chat_output: "markdown"
+jira_output: "after_approval"
+
+# Required tools
+required_tools:
+  - mcp0_getJiraIssue       # Fetch Jira story details
+  - mcp0_createJiraIssue    # Create test issues in Jira
+  - mcp0_createIssueLink    # Link tests to story
+
+# Analysis sources (in order of priority)
+analysis_sources:
+  - jira_story              # Main story (AC, description, QA notes, Dev notes)
+  - parent_epic             # Parent epic context
+  - linked_issues           # Related/blocking stories
+
+# Test categories to generate
+test_categories:
+  - functional              # Component rendering, props, interactions
+  - visual                  # Design tokens, responsive breakpoints
+  - accessibility           # Keyboard, focus, ARIA, contrast
+  - edge_case               # Empty, long content, errors
+  - integration             # Component interactions, data flow
+
+# Coverage requirements
+coverage_target: 95
+mandatory_checks:
+  - all_ac_covered          # Every AC has at least 1 test
+  - qa_notes_covered        # All QA notes from story tested
+
+tags:
+  - qa
+  - manual-tests
+  - test-cases
+
+execution_hints:
+  interactive: true
+  autonomous: false
+  iterative: true

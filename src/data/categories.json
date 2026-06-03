@@ -1,18 +1,18 @@
 [
   {
     "id": 1,
-    "name": "Electronics"
+    "name": "Électronique"
   },
   {
     "id": 2,
-    "name": "Clothing"
+    "name": "Vêtements"
   },
   {
     "id": 3,
-    "name": "Accessories"
+    "name": "Accessoires"
   },
   {
     "id": 4,
-    "name": "Home"
+    "name": "Maison"
   }
 ]

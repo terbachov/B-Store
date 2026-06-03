@@ -1,0 +1,198 @@
+# B-Store AI Development Rules
+
+## Project Context
+- **Project**: B-Store - React E-commerce Demo
+- **Stack**: React 18, Vite, TailwindCSS v3, React Router DOM
+- **Jira**: PRAQ project on alithya.atlassian.net
+- **GitHub**: https://github.com/terbachov/B-Store
+
+## Code Style Rules
+
+### React Components
+- Use functional components with hooks (no class components)
+- Component names in PascalCase (e.g., `ProductCard`, `Layout`)
+- File names in PascalCase matching component name (e.g., `ProductCard.jsx`)
+- Use default export for components
+- Import React components at the top of files
+- Use JSX for component structure
+
+### Imports
+- Keep imports at the top of files
+- Group imports: React libraries, third-party libraries, local components
+- Use absolute imports from `src/` (e.g., `import Layout from './components/Layout'`)
+- Remove unused imports
+
+### Styling with TailwindCSS
+- Use TailwindCSS utility classes for all styling
+- Prefer utility classes over custom CSS
+- Use responsive prefixes (sm:, md:, lg:, xl:)
+- Follow mobile-first approach (base styles → sm → md → lg → xl)
+- Use semantic color classes (blue-600, gray-500, etc.)
+- Use spacing scale (p-4, m-2, gap-6, etc.)
+
+### File Organization
+- Components in `src/components/`
+- Pages in `src/pages/`
+- Data in `src/data/`
+- Context providers in `src/context/` (when created)
+- Hooks in `src/hooks/` (when created)
+- Utils in `src/utils/` (when created)
+
+### State Management
+- Use React hooks (useState, useEffect, useContext, useReducer)
+- For complex state, use Context API
+- For global cart state, use CartContext (to be implemented)
+- Keep state as close to where it's used as possible
+
+### Routing
+- Use React Router DOM for navigation
+- Use `<Link>` for internal navigation (not `<a>` tags)
+- Use dynamic routes with parameters (e.g., `/product/:id`)
+- Use `useParams()` hook to access route parameters
+- Use `useNavigate()` hook for programmatic navigation
+
+### Data Handling
+- JSON data in `src/data/`
+- Import JSON data directly in components
+- Use `.map()` for rendering lists with unique keys
+- Filter and map data before rendering
+- Handle empty states gracefully
+
+### Error Handling
+- Use error boundaries for component-level error handling
+- Handle missing data gracefully
+- Show user-friendly error messages
+- Use try-catch for async operations
+
+## Development Workflow
+
+### When Creating Components
+1. Create component file in appropriate directory
+2. Import necessary dependencies
+3. Create functional component with props
+4. Implement JSX structure with TailwindCSS classes
+5. Export as default
+6. Test component in isolation if possible
+
+### When Creating Pages
+1. Create page file in `src/pages/`
+2. Import React and necessary hooks
+3. Import Layout component for navigation
+4. Implement page content with responsive design
+5. Add navigation links where appropriate
+6. Test page at correct route
+
+### When Modifying Data
+1. Update appropriate JSON file in `src/data/`
+2. Ensure data structure is consistent
+3. Update imports in components that use the data
+4. Test data changes in the application
+
+### Git Commit Messages
+- Reference Jira ticket: `PRAQ-XXX: description`
+- Be descriptive and concise
+- Use imperative mood (e.g., "Add", "Fix", "Update")
+- Keep commits atomic (one logical change per commit)
+
+## Code Quality
+
+### Performance
+- Use `React.memo()` for components that re-render unnecessarily
+- Use `useCallback()` for event handlers
+- Use `useMemo()` for expensive computations
+- Lazy load routes when appropriate
+
+### Accessibility
+- Use semantic HTML elements
+- Add alt text to images
+- Ensure color contrast is sufficient
+- Make interactive elements keyboard accessible
+- Use ARIA labels where necessary
+
+### Security
+- Don't expose sensitive data in client-side code
+- Validate user inputs
+- Sanitize user-generated content
+- Use HTTPS for API calls
+
+## Jira Integration
+
+### Story References
+- Always reference Jira ticket in code comments when implementing features
+- Use ticket format: `// PRAQ-XXX: description`
+- Update Jira ticket status when work is complete
+
+### Acceptance Criteria
+- Follow the acceptance criteria defined in Jira stories
+- Test against each criterion
+- Document any deviations or blockers
+
+## Testing
+
+### When Testing Changes
+1. Start dev server: `npm run dev`
+2. Navigate to affected pages
+3. Test all functionality
+4. Check responsive design on different screen sizes
+5. Verify no console errors
+6. Test edge cases
+
+## Common Patterns
+
+### Component Pattern
+```jsx
+import { useState, useEffect } from 'react'
+
+export default function ComponentName({ prop1, prop2 }) {
+  const [state, setState] = useState(initialValue)
+  
+  useEffect(() => {
+    // side effects
+  }, [dependencies])
+  
+  return (
+    <div className="tailwind-classes">
+      {/* JSX content */}
+    </div>
+  )
+}
+```
+
+### Page Pattern
+```jsx
+import Layout from '../components/Layout'
+
+export default function PageName() {
+  return (
+    <Layout>
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        {/* Page content */}
+      </div>
+    </Layout>
+  )
+}
+```
+
+### Data Import Pattern
+```jsx
+import data from '../data/dataFile.json'
+
+export default function Component() {
+  return (
+    <div>
+      {data.map(item => (
+        <div key={item.id}>{item.name}</div>
+      ))}
+    </div>
+  )
+}
+```
+
+## Prohibited Actions
+- Do NOT use class components (use functional components)
+- Do NOT use inline styles (use TailwindCSS classes)
+- Do NOT use `<a>` tags for internal navigation (use `<Link>`)
+- Do NOT hardcode data in components (use JSON files)
+- Do NOT create unnecessary files
+- Do NOT ignore console errors
+- Do NOT skip testing changes

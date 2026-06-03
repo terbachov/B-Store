@@ -1,0 +1,53 @@
+name: qa-code-review
+description: 'Perform adversarial code quality review. Use when the user says "Review" or "code review"'
+
+# Critical variables
+project_root: "{project-root}"
+communication_language: "fr"
+date: system-generated
+
+# Workflow components
+installed_path: "{project-root}/bmad-config/workflows/qa-code-review"
+instructions: "{installed_path}/qa-code-review.md"
+validation: false
+template: false
+
+# Variables and inputs
+jira_key: ""  # User provides Jira story key (e.g., PRAQ-106)
+file_path: ""  # User provides file path to review (optional)
+
+# Output configuration
+chat_output: "markdown"
+
+# Required tools
+required_tools:
+  - mcp0_getJiraIssue       # Fetch Jira story details
+  - read_file               # Read code files for review
+
+# Analysis sources
+analysis_sources:
+  - jira_story              # Main story (AC, description, QA notes, Dev notes)
+  - code_files              # Code to review
+  - cursorrules             # Code conventions (.cursorrules)
+
+# Review categories
+review_categories:
+  - code_quality            # Code style, conventions, best practices
+  - functionality           # Implementation correctness
+  - accessibility           # WCAG compliance
+  - performance             # Performance issues
+  - edge_cases              # Boundary conditions
+
+# Minimum findings
+min_findings: 3
+max_findings: 10
+
+tags:
+  - qa
+  - code-review
+  - quality
+
+execution_hints:
+  interactive: true
+  autonomous: false
+  iterative: false

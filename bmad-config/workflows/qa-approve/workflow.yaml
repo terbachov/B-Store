@@ -1,0 +1,45 @@
+name: qa-approve
+description: 'Approve implementation after validation. Use when the user says "Approve"'
+
+# Critical variables
+project_root: "{project-root}"
+communication_language: "fr"
+date: system-generated
+
+# Workflow components
+installed_path: "{project-root}/bmad-config/workflows/qa-approve"
+instructions: "{installed_path}/qa-approve.md"
+validation: false
+template: false
+
+# Variables and inputs
+jira_key: ""  # User provides Jira story key (e.g., PRAQ-106)
+
+# Output configuration
+chat_output: "markdown"
+
+# Required tools
+required_tools:
+  - mcp0_getJiraIssue       # Fetch Jira story details
+  - mcp0_transitionJiraIssue # Transition issue status
+
+# Analysis sources
+analysis_sources:
+  - jira_story              # Main story (AC, description, QA notes, Dev notes)
+
+# Approval criteria
+approval_criteria:
+  - all_ac_met              # All acceptance criteria met
+  - tests_pass              # Tests pass (if applicable)
+  - no_regressions         # No regressions introduced
+  - code_quality            # Code meets quality standards
+
+tags:
+  - qa
+  - approval
+  - quality-gate
+
+execution_hints:
+  interactive: true
+  autonomous: false
+  iterative: false
